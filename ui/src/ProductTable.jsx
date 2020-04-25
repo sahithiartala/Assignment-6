@@ -1,3 +1,4 @@
+/* eslint-disable react/jsx-no-target-blank */
 
 
 /* eslint linebreak-style: ["error", "windows"] */
@@ -58,7 +59,7 @@ const ProductRow = withRouter(({
     <td>{product.name}</td>
     <td>{product.category}</td>
     <td>{product.Price}</td>
-    <td><a href={`/viewimage/${product.id}`} target="blank"> View</a></td>
+    <td><a href={`/viewimage/${product.id}`} target="_blank"> View</a></td>
     <td>
       <LinkContainer to={`/edit/${product.id}`}>
         <OverlayTrigger delayShow={100} overlay={editTooltip}>

@@ -1,3 +1,4 @@
+/* eslint-disable react/jsx-no-target-blank */
 /* eslint linebreak-style: ["error", "windows"] */
 import React from 'react';
 // import { NavLink } from 'react-router-dom';
@@ -52,7 +53,7 @@ function Footer() {
       <p className="text-center">
         Full source code available at this
         {' '}
-        <a href="https://github.com/sahithiartala">
+        <a href="https://github.com/sahithiartala/Assignment-6" target="_blank">
           GitHub repository
         </a>
       </p>
