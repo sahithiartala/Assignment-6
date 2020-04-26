@@ -4,12 +4,14 @@ import React from 'react';
 // import { NavLink } from 'react-router-dom';
 // import Routes from './Routes.jsx';
 
+
 import {
-  Navbar, Nav, NavItem, NavDropdown,
-  MenuItem, Glyphicon, Tooltip, OverlayTrigger, Grid,
+  Navbar, Nav, NavItem,
+  Grid,
 } from 'react-bootstrap';
 import { LinkContainer } from 'react-router-bootstrap';
 import Routes from './Routes.jsx';
+import ProductAddNavItem from './ProductAddNavItem.jsx';
 
 function NavBar() {
   return (
@@ -24,28 +26,16 @@ function NavBar() {
         <LinkContainer to="/products">
           <NavItem>Product List</NavItem>
         </LinkContainer>
+
       </Nav>
       <Nav pullRight>
-        <NavItem>
-          <OverlayTrigger
-            placement="left"
-            delayShow={1000}
-            overlay={<Tooltip id="create-issue">Create Product</Tooltip>}
-          >
-            <Glyphicon glyph="plus" />
-          </OverlayTrigger>
-        </NavItem>
-        <NavDropdown
-          id="user-dropdown"
-          title={<Glyphicon glyph="option-vertical" />}
-          noCaret
-        >
-          <MenuItem>About</MenuItem>
-        </NavDropdown>
+        <ProductAddNavItem />
+
       </Nav>
     </Navbar>
   );
 }
+
 function Footer() {
   return (
     <small>
@@ -60,6 +50,7 @@ function Footer() {
     </small>
   );
 }
+
 
 export default function Page() {
   return (
