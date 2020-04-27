@@ -6,8 +6,10 @@ import React from 'react';
 
 
 import {
-  Navbar, Nav, NavItem,
+  Navbar, Nav, NavItem, NavDropdown,
+  MenuItem, Glyphicon,
   Grid,
+
 } from 'react-bootstrap';
 import { LinkContainer } from 'react-router-bootstrap';
 import Routes from './Routes.jsx';
@@ -30,7 +32,15 @@ function NavBar() {
       </Nav>
       <Nav pullRight>
         <ProductAddNavItem />
-
+        <NavDropdown
+          id="user-dropdown"
+          title={<Glyphicon glyph="option-vertical" />}
+          noCaret
+        >
+          <LinkContainer to="/about">
+            <MenuItem>About</MenuItem>
+          </LinkContainer>
+        </NavDropdown>
       </Nav>
     </Navbar>
   );
@@ -54,10 +64,12 @@ function Footer() {
 
 export default function Page() {
   return (
-    <Grid fluid>
-      <NavBar />
-      <Routes />
-      <Footer />
-    </Grid>
+    <div>
+      <Grid fluid>
+        <NavBar />
+        <Routes />
+        <Footer />
+      </Grid>
+    </div>
   );
 }

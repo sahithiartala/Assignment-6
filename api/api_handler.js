@@ -6,13 +6,17 @@ const fs = require('fs');
 require('dotenv').config();
 const { ApolloServer } = require('apollo-server-express');
 const product = require('./product.js');
+const about = require('./about.js');
 
 const resolvers = {
   Query: {
+
+    about: about.getMessage,
     productList: product.list,
     Product: product.get,
   },
   Mutation: {
+    setAboutMessage: about.setMessage,
     addProduct: product.add,
     productDelete: product.remove,
     productUpdate: product.update,
